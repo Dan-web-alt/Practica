@@ -1,0 +1,38 @@
+{
+  "title": "AUTOrevizor - Testare Auto",
+  "logo": "AUTOrevizor",
+
+  "nav-home": "Acasă",
+  "nav-services": "Servicii",
+  "nav-booking": "Programare",
+  "nav-contact": "Contact",
+
+  "welcome-title": "Bine ați venit la AUTOrevizor!",
+  "welcome-text": "Stația ITP unde siguranța și profesionalismul sunt pe primul loc.",
+  "footer": "© AUTOrevizor | Made by Goncearuc Dan Company",
+
+  "services-title": "Serviciile noastre - AUTOrevizor",
+  "services-header": "Serviciile noastre",
+  "services-desc": "Tarife pentru testarea tehnică și inspecția vehiculelor conform normelor naționale.",
+  "col-nr": "Nr.",
+  "col-item": "Obiectul impunerii",
+  "col-unit": "Unitate",
+  "col-tax": "Taxa (lei)",
+  "btn-book-now": "Programează-te acum",
+
+  "booking-title": "Programare - AUTOrevizor",
+  "booking-header": "Programare Online",
+  "veh-select": "Selectați tipul vehiculului",
+  "veh-car": "Autoturism",
+  "veh-van": "Autoutilitară",
+  "veh-moto": "Motocicletă",
+  "booking-send": "Trimite programarea",
+
+  "contact-title": "Contact - AUTOrevizor",
+  "contact-header": "Contactează-ne",
+  "address-label": "Adresă:",
+  "phone-label": "Telefon:",
+  "mail-label": "Email:",
+  "program-label": "Program de lucru:",
+  "program-hours": "Luni - Vineri: 08:00 - 17:00<br>Sâmbătă: 08:00 - 12:00<br>Duminică: Închis"
+}

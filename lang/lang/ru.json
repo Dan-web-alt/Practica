@@ -1,0 +1,38 @@
+{
+  "title": "AUTOrevizor - Автотестирование",
+  "logo": "AUTOревизор",
+
+  "nav-home": "Главная",
+  "nav-services": "Услуги",
+  "nav-booking": "Запись",
+  "nav-contact": "Контакты",
+
+  "welcome-title": "Добро пожаловать в AUTOrevizor!",
+  "welcome-text": "СТО, где безопасность и профессионализм на первом месте.",
+  "footer": "© AUTOrevizor | Сделано Goncearuc Dan Company",
+
+  "services-title": "Наши услуги - AUTOrevizor",
+  "services-header": "Наши услуги",
+  "services-desc": "Тарифы на техосмотр и инспекцию транспортных средств.",
+  "col-nr": "№",
+  "col-item": "Объект обложения",
+  "col-unit": "Ед. изм.",
+  "col-tax": "Тариф (лей)",
+  "btn-book-now": "Записаться",
+
+  "booking-title": "Запись - AUTOrevizor",
+  "booking-header": "Онлайн запись",
+  "veh-select": "Выберите тип транспорта",
+  "veh-car": "Легковой автомобиль",
+  "veh-van": "Грузовой",
+  "veh-moto": "Мотоцикл",
+  "booking-send": "Отправить",
+
+  "contact-title": "Контакты - AUTOrevizor",
+  "contact-header": "Связаться с нами",
+  "address-label": "Адрес:",
+  "phone-label": "Телефон:",
+  "mail-label": "Email:",
+  "program-label": "График работы:",
+  "program-hours": "Пн-Пт: 08:00 - 17:00<br>Сб: 08:00 - 12:00<br>Вс: Закрыто"
+}
