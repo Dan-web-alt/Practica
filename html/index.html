@@ -10,7 +10,6 @@
 <body>
   <header>
     <h1 class="logo" data-key="logo">AUTOrevizor</h1>
-
     <nav>
       <ul>
         <li><a href="index.html" class="active" data-key="nav-home">Acasă</a></li>
@@ -19,24 +18,29 @@
         <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
       </ul>
     </nav>
-
     <div class="lang-switch">
-      <button>RO</button>
-      <button>RU</button>
+      <button onclick="setLanguage('ro')">RO</button>
+      <button onclick="setLanguage('ru')">RU</button>
     </div>
   </header>
 
   <main>
     <h2 data-key="welcome-title">Bine ați venit la AUTOrevizor!</h2>
     <p data-key="welcome-text">
-      Stația ITP unde siguranța, corectitudinea și profesionalismul sunt pe primul loc.
+      Stația ITP unde siguranța și profesionalismul sunt pe primul loc.
     </p>
 
+    <!-- IMAGINEA MARE DE SUS - pune calea spre poza principala -->
+    <div class="hero">
+      <img src="../img/face1.0.jpg" alt="AUTOrevizor">
+    </div>
+
+    <!-- CELE 4 IMAGINI MICI DE JOS - pune calea spre fiecare poza -->
     <div class="gallery">
-      <div class="img-placeholder"></div>
-      <div class="img-placeholder"></div>
-      <div class="img-placeholder"></div>
-      <div class="img-placeholder"></div>
+      <img src="../img/car.jpg" alt="Autoturism">
+      <img src="../img/cccc.jpg" alt="Statie ITP">
+      <img src="../img/oameni.jpg" alt="Personal">
+      <img src="../img/tehnica.jpg" alt="Echipament">
     </div>
 
     <a href="progrmare.html" class="btn" data-key="btn-book-now">
