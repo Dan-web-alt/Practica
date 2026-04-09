@@ -180,3 +180,33 @@ footer {
     transform: translateX(50%);
   }
 }
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+table.tarife {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.tarife th,
+table.tarife td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  text-align: left;
+}
+
+table.tarife th {
+  background-color: #0f274d;
+  color: #ffd700;
+}
