@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="contact-title">Contact - AUTOrevizor</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+
+<body>
+  <header>
+    <h1 class="logo" data-key="logo">AUTOrevizor</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" data-key="nav-home">Acasă</a></li>
+        <li><a href="servicii.html" data-key="nav-services">Servicii</a></li>
+        <li><a href="programare.html" data-key="nav-booking">Programare</a></li>
+        <li><a href="contact.html" class="active" data-key="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="setLanguage('ro')">RO</button>
+      <button onclick="setLanguage('ru')">RU</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <h2 data-key="contact-header">Contactează-ne</h2>
+
+    <div class="contact-info">
+
+      <p>
+        <strong>📍 <span data-key="address-label">Adresă:</span></strong>
+        <span data-key="address-text">Str. Independenței 142, Rîșcani, Republica Moldova</span>
+      </p>
+
+      <p>
+        <strong>📞 <span data-key="phone-label">Telefon:</span></strong>
+        <span>+373 794 21 750</span>
+      </p>
+
+      <p>
+        <strong>📧 <span data-key="mail-label">Email:</span></strong>
+        <span>autorevizor@mail.ru</span>
+      </p>
+
+      <p>
+        <strong>🕒 <span data-key="program-label">Program de lucru:</span></strong>
+      </p>
+
+      <p data-key="program-hours">
+        Luni - Vineri: 08:00 - 17:00<br>
+        Sâmbătă: 08:00 - 12:00<br>
+        Duminică: Închis
+      </p>
+    </div>
+
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2672.219577789454!2d27.532003775906553!3d47.95147786409945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ccaba3f41638dd%3A0x648ca33713b63119!2sTestare%20Auto!5e0!3m2!1sro!2s!4v1764418274651!5m2!1sro!2s"
+        width="100%"
+        height="450"
+        style="border:0; border-radius:10px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </main>
+
+  <footer data-key="footer">
+    © AUTOrevizor | Made by Goncearuc Dan Company
+  </footer>
+
+ <script src="../js/script.js"></script>
+</body>
+</html>

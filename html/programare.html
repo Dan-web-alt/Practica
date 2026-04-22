@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="booking-title">Programare - AUTOrevizor</title>
+<link rel="stylesheet" href="../css/style.css"></head>
+
+<body>
+  <header>
+    <h1 class="logo" data-key="logo">AUTOrevizor</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" data-key="nav-home">Acasă</a></li>
+        <li><a href="servicii.html" data-key="nav-services">Servicii</a></li>
+        <li><a href="programare.html" class="active" data-key="nav-booking">Programare</a></li>
+        <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch">
+      <button onclick="setLanguage('ro')">RO</button>
+      <button onclick="setLanguage('ru')">RU</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <h2 data-key="booking-header">Programare Online</h2>
+
+    <form id="programare-form">
+
+      <input id="nume" name="nume" type="text"
+        data-placeholder-ro="Nume complet"
+        data-placeholder-ru="Полное имя"
+        placeholder="Nume complet" required>
+
+      <input id="telefon" name="telefon" type="tel"
+        data-placeholder-ro="Telefon"
+        data-placeholder-ru="Телефон"
+        placeholder="Telefon" required>
+
+      <select id="tipVehicul" name="tipVehicul" required>
+        <option value="" data-key="veh-select">Selectați tipul vehiculului</option>
+        <option value="Autoturism" data-key="veh-car">Autoturism</option>
+        <option value="Autoutilitară" data-key="veh-van">Autoutilitară</option>
+        <option value="Motocicletă" data-key="veh-moto">Motocicletă</option>
+      </select>
+
+      <input id="dataProgramare" name="dataProgramare" type="date" required>
+
+      <button type="submit" data-key="booking-send">Trimite programarea</button>
+    </form>
+  </main>
+
+  <footer data-key="footer">
+    © AUTOrevizor | Made by Goncearuc Dan Company
+  </footer>
+
+ <script src="../js/script.js"></script>
+</body>
+</html>
