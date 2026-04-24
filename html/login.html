@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="login-title">Autentificare - AUTOrevizor</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="auth-body">
+
+  <!-- Selector limbă fix în colț -->
+  <div class="auth-lang lang-switch">
+    <button onclick="setLanguage('ro')">RO</button>
+    <button onclick="setLanguage('ru')">RU</button>
+  </div>
+
+  <div class="auth-wrapper">
+
+    <div class="auth-logo" data-key="logo">AUTOrevizor</div>
+    <div class="auth-tagline">Stația ITP de încredere</div>
+
+    <div class="auth-card">
+      <h2 data-key="login-header">Autentificare</h2>
+
+      <div id="login-alert" class="alert" style="display:none;"></div>
+
+      <form id="login-form" novalidate>
+
+        <div class="input-group">
+          <input id="login-email" type="email"
+            data-placeholder-ro="Email"
+            data-placeholder-ru="Email"
+            placeholder="Email" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <div class="input-group">
+          <input id="login-parola" type="password"
+            data-placeholder-ro="Parolă"
+            data-placeholder-ru="Пароль"
+            placeholder="Parolă" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <button type="submit" data-key="login-send">Autentifică-te</button>
+
+      </form>
+
+      <p class="auth-link">
+        <span data-key="no-account">Nu ai cont?</span>
+        <a href="register.html" data-key="go-register">Înregistrează-te</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

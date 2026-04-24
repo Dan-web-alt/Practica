@@ -1,4 +1,4 @@
-* {box-sizing: border-box;}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -16,6 +16,10 @@ body {
   to { opacity: 1; }
 }
 
+/* ============================================================
+   HEADER & NAV
+   ============================================================ */
+
 header {
   background-color: #0d203d;
   color: #ffd700;
@@ -23,11 +27,6 @@ header {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   position: relative;
-  background-attachment: fixed;
-  background-image: linear-gradient(
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.45)
-    ),
 }
 
 .logo {
@@ -84,6 +83,30 @@ nav a.active {
   color: #ffd700;
 }
 
+/* Buton logout special în nav */
+nav .nav-logout-btn {
+  background: none;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  font-family: inherit;
+  transition: 0.2s ease;
+}
+
+nav .nav-logout-btn:hover {
+  background: #e74c3c;
+  color: #fff;
+  transform: none;
+}
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
 main {
   flex: 1;
   padding: 40px 20px;
@@ -107,6 +130,10 @@ h2 {
   text-shadow: 0 0 5px rgba(255,215,0,0.3);
 }
 
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 footer {
   text-align: center;
   background-color: #0d203d;
@@ -116,24 +143,26 @@ footer {
   margin-top: auto;
 }
 
-.slideshow {
+/* ============================================================
+   SLIDESHOW & GALLERY
+   ============================================================ */
+
+.hero-slideshow {
   width: 100%;
-  max-width: 900px;
-  height: 350px;
-  margin: 30px auto;
-  border-radius: 15px;
-  background-size: cover;
+  max-width: 1100px;
+  height: 520px;
+  margin: 30px auto 20px;
+  border-radius: 16px;
+  background-image: url("../img/face1.0.jpg");
+  background-size: contain;
   background-position: center;
-  overflow: hidden;
-  animation: slideFade 12s infinite;
+  background-repeat: no-repeat;
+  background-color: #0d203d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-@keyframes slideFade {
-  0%   {background-image: url("img/face1.0.jpg");}
-  0%  {background-image: url("img/face1.0.jpg");}
-  0%  {background-image: url("img/face1.0.jpg");}
-  0% {background-image: url("img/face1.0.jpg");}
-}
+@media (max-width: 1024px) { .hero-slideshow { height: 420px; } }
+@media (max-width: 480px)  { .hero-slideshow { height: 260px; border-radius: 12px; } }
 
 .gallery {
   display: flex;
@@ -151,9 +180,11 @@ footer {
   transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
+.gallery img:hover { transform: scale(1.05); }
+
+/* ============================================================
+   FORM — general
+   ============================================================ */
 
 form {
   background: rgba(255,255,255,0.1);
@@ -169,7 +200,7 @@ form {
   gap: 10px;
 }
 
-input, select, button {
+input, select {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -186,11 +217,135 @@ input, select, button {
   font-size: 1em;
 }
 
-@media (max-width: 480px) {
-  #dataProgramare {
-    font-size: 1.1em;
-  }
+/* ============================================================
+   AUTH PAGES — login & register (stilizare specială)
+   ============================================================ */
+
+.auth-page body {
+  justify-content: center;
 }
+
+/* Pagini fără header/footer obișnuit → fundal cu gradient */
+body.auth-body {
+  background: linear-gradient(135deg, #061022 0%, #0d203d 50%, #0b1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorațiuni geometrice de fundal */
+body.auth-body::before,
+body.auth-body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.auth-body::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+}
+
+body.auth-body::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(13,32,61,0.8) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+}
+
+/* Wrapper centrat pentru formularele auth */
+.auth-wrapper {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Logo pe paginile auth */
+.auth-logo {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.4);
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.auth-tagline {
+  color: #8899bb;
+  font-size: 0.9em;
+  margin-bottom: 30px;
+  animation: fadeUp 0.7s 0.1s ease forwards;
+  opacity: 0;
+}
+
+/* Card-ul formularului auth */
+.auth-card {
+  background: rgba(13, 32, 61, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,215,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: 40px 36px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  animation: cardAppear 0.6s 0.15s ease forwards;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@keyframes cardAppear {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-card h2 {
+  font-size: 1.6em;
+  margin: 0 0 24px;
+  color: #ffd700;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255,215,0,0.25);
+}
+
+/* Formular în interiorul cardului auth */
+.auth-card form {
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  gap: 14px;
+}
+
+/* Lang switch pe auth pages */
+.auth-lang {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+}
+
+/* ============================================================
+   BUTOANE
+   ============================================================ */
 
 button, .btn {
   background-color: #ffd700;
@@ -199,7 +354,11 @@ button, .btn {
   font-weight: bold;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
 }
 
 button:hover, .btn:hover {
@@ -207,20 +366,44 @@ button:hover, .btn:hover {
   transform: scale(1.05) translateY(-2px);
 }
 
-button::after, .btn::after {
-  content: "";
-  position: absolute;
-  left: -100%;
-  top: 0;
+/* Buton principal auth (mai mare, mai elegant) */
+.auth-card button[type="submit"] {
   width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.3);
-  transition: 0.4s ease;
+  padding: 14px;
+  font-size: 1.05em;
+  border-radius: 10px;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button:hover::after, .btn:hover::after {
-  left: 0;
+.auth-card button[type="submit"]:hover {
+  background-color: #ffe033;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,215,0,0.45);
 }
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-top: 25px;
+  color: #0b1a2e !important;
+  box-shadow: 0 4px 12px rgba(255,215,0,0.35);
+}
+
+.btn:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,215,0,0.45);
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
 
 .contact-info {
   background: #243b55;
@@ -231,6 +414,10 @@ button:hover::after, .btn:hover::after {
   text-align: left;
   animation: fadeUp 0.7s ease forwards;
 }
+
+/* ============================================================
+   TABEL SERVICII
+   ============================================================ */
 
 .table-container {
   overflow-x: auto;
@@ -254,16 +441,155 @@ table.tarife th {
   color: #ffd700;
 }
 
+/* ============================================================
+   HARTĂ
+   ============================================================ */
+
 .map-container {
   margin: 20px auto;
   max-width: 600px;
   animation: fadeUp 0.7s ease forwards;
 }
 
+/* ============================================================
+   INPUT GROUP — validare vizuală
+   ============================================================ */
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  flex: 1;
+  padding-right: 36px;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+  border: 2px solid transparent;
+  background-color: #fff;
+  color: #111;
+  border-radius: 6px;
+}
+
+/* Input în auth-card — fundal ușor diferit */
+.auth-card .input-group input {
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 11px 36px 11px 12px;
+  font-size: 0.98em;
+}
+
+.input-group input.valid {
+  border-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.4);
+}
+
+.input-group input.invalid {
+  border-color: #e74c3c;
+  box-shadow: 0 0 6px rgba(231, 76, 60, 0.4);
+  animation: shake 0.35s ease;
+}
+
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-6px); }
+  40%  { transform: translateX(6px); }
+  60%  { transform: translateX(-4px); }
+  80%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.input-feedback {
+  position: absolute;
+  right: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.input-group input.valid   ~ .input-feedback { color: #2ecc71; }
+.input-group input.invalid ~ .input-feedback { color: #e74c3c; }
+
+/* ============================================================
+   ALERT — mesaj succes / eroare
+   ============================================================ */
+
+.alert {
+  max-width: 500px;
+  margin: 0 auto 10px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95em;
+  text-align: center;
+  opacity: 0;
+}
+
+.auth-card .alert {
+  margin: 0 0 12px;
+  max-width: 100%;
+}
+
+.alert-anim {
+  animation: alertAppear 0.4s ease forwards;
+}
+
+@keyframes alertAppear {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.alert-success {
+  background-color: rgba(46, 204, 113, 0.18);
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+.alert-error {
+  background-color: rgba(231, 76, 60, 0.18);
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+/* ============================================================
+   AUTH LINK — "Ai deja cont?"
+   ============================================================ */
+
+.auth-link {
+  margin-top: 16px;
+  font-size: 0.95em;
+  color: #8899bb;
+  text-align: center;
+}
+
+.auth-link a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.auth-link a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Separator între câmpuri în auth-card */
+.auth-card .form-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 6px 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
 @media (max-width: 480px) {
   nav ul { flex-direction: column; gap: 10px; }
   .gallery img { width: 90%; }
-  .slideshow { height: 200px; }
   h2 { font-size: 1.2em; }
 
   header {
@@ -282,123 +608,14 @@ table.tarife th {
     border-radius: 8px;
   }
 
-  .logo {
-    font-size: 24px;
+  .logo { font-size: 24px; }
+
+  .auth-card {
+    padding: 28px 20px;
   }
-}
 
-.btn {
-  display: inline-block;
-  background-color: #ffd700;
-  color: #0b1a2e !important;
-  padding: 14px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-top: 25px;
-
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
-  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.btn::after {
-  display: none !important;
-}
-
-.btn:hover {
-  background-color: #e5c100;
-  transform: scale(1.06) translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255,215,0,0.45);
-}
-
-.btn:focus,
-.btn:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.slideshow {
-  width: 100vw;
-  max-width: 100%;
-  height: 420px;
-  margin: 40px auto;
-  border-radius: 0;
-  background-image: url("img/face1.0.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.slideshow::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(11,26,46,0.2),
-    rgba(11,26,46,0.7)
-  );
-}
-
-@media (max-width: 768px) {
-  .slideshow {
-    height: 260px;
-  }
-}
-
-.slideshow {
-  width: 100%;
-  max-width: 900px;
-  height: 350px;
-  margin: 30px auto;
-  border-radius: 15px;
-
-  background-image: url("img/face1.0.jpg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  overflow: hidden;
-}
-
-@media (max-width: 480px) {
-  .slideshow {
-    height: 220px;
-  }
-}
-
-.hero-slideshow {
-  width: 100%;
-  max-width: 1100px;
-  height: 520px;
-  margin: 30px auto 20px;
-  border-radius: 16px;
-
-  background-image: url("../img/face1.0.jpg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  background-color: #0d203d;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
-
-@media (max-width: 1024px) {
-  .hero-slideshow {
-    height: 420px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-slideshow {
-    height: 260px;
-    border-radius: 12px;
+  .auth-lang {
+    top: 10px;
+    right: 10px;
   }
 }

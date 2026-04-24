@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-key="services-title">Serviciile noastre - AUTOrevizor</title>
-<link rel="stylesheet" href="../css/style.css"></head>
+  <title data-key="booking-title">Programare - AUTOrevizor</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
 
 <body>
   <header>
@@ -13,9 +14,14 @@
     <nav>
       <ul>
         <li><a href="index.html" data-key="nav-home">Acasă</a></li>
-        <li><a href="servicii.html" data-key="nav-services" class="active">Servicii</a></li>
-        <li><a href="programare.html" data-key="nav-booking">Programare</a></li>
+        <li><a href="servicii.html" data-key="nav-services">Servicii</a></li>
+        <li><a href="programare.html" class="active" data-key="nav-booking">Programare</a></li>
         <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
+        <li>
+          <button class="nav-logout-btn" onclick="logout()" data-key="nav-logout">
+            Deconectare
+          </button>
+        </li>
       </ul>
     </nav>
 
@@ -26,93 +32,37 @@
   </header>
 
   <main class="content">
-    <h2 data-key="services-header">Serviciile noastre</h2>
-    <p data-key="services-desc">
-      Tarife pentru testarea tehnică și inspecția vehiculelor conform normelor naționale.
-    </p>
+    <h2 data-key="booking-header">Programare Online</h2>
 
-    <div class="table-container">
+    <form id="programare-form">
 
-      <table class="tarife" id="tabel-ro">
-        <thead>
-          <tr>
-            <th data-key="col-nr">Nr.</th>
-            <th data-key="col-item">Obiectul impunerii</th>
-            <th data-key="col-unit">Unitate</th>
-            <th data-key="col-tax">Taxa (lei)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Motociclete până la 500 cm³</td><td>unitate</td><td>300</td></tr>
-          <tr><td></td><td>Motociclete peste 500 cm³</td><td>unitate</td><td>600</td></tr>
+      <input id="nume" name="nume" type="text"
+        data-placeholder-ro="Nume complet"
+        data-placeholder-ru="Полное имя"
+        placeholder="Nume complet" required>
 
-          <tr><td>2</td><td>Autoturisme până la 2000 cm³</td><td>cm³</td><td>0.60</td></tr>
-          <tr><td></td><td>Autoturisme 2001–3000 cm³</td><td>cm³</td><td>0.90</td></tr>
-          <tr><td></td><td>Autoturisme 3001–4000 cm³</td><td>cm³</td><td>1.20</td></tr>
-          <tr><td></td><td>Autoturisme peste 5001 cm³</td><td>cm³</td><td>1.80</td></tr>
+      <input id="telefon" name="telefon" type="tel"
+        data-placeholder-ro="Telefon"
+        data-placeholder-ru="Телефон"
+        placeholder="Telefon" required>
 
-          <tr><td>3</td><td>Remorci</td><td>tonă</td><td>270</td></tr>
-          <tr><td></td><td>Semiremorci până la 20 t</td><td>tonă</td><td>225</td></tr>
-          <tr><td></td><td>Semiremorci peste 20 t</td><td>unitate</td><td>4500</td></tr>
+      <select id="tipVehicul" name="tipVehicul" required>
+        <option value="" data-key="veh-select">Selectați tipul vehiculului</option>
+        <option value="Autoturism" data-key="veh-car">Autoturism</option>
+        <option value="Autoutilitară" data-key="veh-van">Autoutilitară</option>
+        <option value="Motocicletă" data-key="veh-moto">Motocicletă</option>
+      </select>
 
-          <tr><td>5</td><td>Autocamioane până la 1.6 t</td><td>unitate</td><td>1200</td></tr>
-          <tr><td></td><td>Autocamioane 1.6–5 t</td><td>unitate</td><td>2250</td></tr>
-          <tr><td></td><td>Autocamioane 5–10 t</td><td>unitate</td><td>3000</td></tr>
-          <tr><td></td><td>Autocamioane peste 10 t</td><td>unitate</td><td>4500</td></tr>
+      <input id="dataProgramare" name="dataProgramare" type="date" required>
 
-          <tr><td>6</td><td>Autobuze până la 11 locuri</td><td>unitate</td><td>2925</td></tr>
-          <tr><td></td><td>Autobuze 12–17 locuri</td><td>unitate</td><td>3600</td></tr>
-          <tr><td></td><td>Autobuze 18–24 locuri</td><td>unitate</td><td>4275</td></tr>
-          <tr><td></td><td>Autobuze peste 40 locuri</td><td>unitate</td><td>5400</td></tr>
-        </tbody>
-      </table>
-
-      <table class="tarife" id="tabel-ru" style="display:none;">
-        <thead>
-          <tr>
-            <th>№</th>
-            <th>Объект обложения</th>
-            <th>Ед. изм.</th>
-            <th>Тариф (лей)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Мотоциклы до 500 см³</td><td>единица</td><td>300</td></tr>
-          <tr><td></td><td>Мотоциклы более 500 см³</td><td>единица</td><td>600</td></tr>
-
-          <tr><td>2</td><td>Легковые автомобили до 2000 см³</td><td>см³</td><td>0.60</td></tr>
-          <tr><td></td><td>Легковые автомобили 2001–3000 см³</td><td>см³</td><td>0.90</td></tr>
-          <tr><td></td><td>Легковые автомобили 3001–4000 см³</td><td>см³</td><td>1.20</td></tr>
-          <tr><td></td><td>Легковые автомобили более 5001 см³</td><td>см³</td><td>1.80</td></tr>
-
-          <tr><td>3</td><td>Прицепы</td><td>тонна</td><td>270</td></tr>
-          <tr><td></td><td>Полуприцепы до 20 т</td><td>тонна</td><td>225</td></tr>
-          <tr><td></td><td>Полуприцепы более 20 т</td><td>единица</td><td>4500</td></tr>
-
-          <tr><td>5</td><td>Грузовики до 1.6 т</td><td>единица</td><td>1200</td></tr>
-          <tr><td></td><td>Грузовики 1.6–5 т</td><td>единица</td><td>2250</td></tr>
-          <tr><td></td><td>Грузовики 5–10 т</td><td>единица</td><td>3000</td></tr>
-          <tr><td></td><td>Грузовики более 10 т</td><td>единица</td><td>4500</td></tr>
-
-          <tr><td>6</td><td>Автобусы до 11 мест</td><td>единица</td><td>2925</td></tr>
-          <tr><td></td><td>Автобусы 12–17 мест</td><td>единица</td><td>3600</td></tr>
-          <tr><td></td><td>Автобусы 18–24 мест</td><td>единица</td><td>4275</td></tr>
-          <tr><td></td><td>Автобусы более 40 мест</td><td>единица</td><td>5400</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div style="margin-top: 30px;">
-      <a href="programare.html" class="btn" data-key="btn-book-now">Programează-te acum</a>
-    </div>
-
+      <button type="submit" data-key="booking-send">Trimite programarea</button>
+    </form>
   </main>
 
   <footer data-key="footer">
     © AUTOrevizor | Made by Goncearuc Dan Company
   </footer>
 
- <script src="../js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

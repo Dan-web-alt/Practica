@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="register-title">Înregistrare - AUTOrevizor</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="auth-body">
+
+  <!-- Selector limbă fix în colț -->
+  <div class="auth-lang lang-switch">
+    <button onclick="setLanguage('ro')">RO</button>
+    <button onclick="setLanguage('ru')">RU</button>
+  </div>
+
+  <div class="auth-wrapper">
+
+    <div class="auth-logo" data-key="logo">AUTOrevizor</div>
+    <div class="auth-tagline">Stația ITP de încredere</div>
+
+    <div class="auth-card">
+      <h2 data-key="register-header">Creare Cont Nou</h2>
+
+      <div id="register-alert" class="alert" style="display:none;"></div>
+
+      <form id="register-form" novalidate>
+
+        <div class="input-group">
+          <input id="reg-nume" type="text"
+            data-placeholder-ro="Nume"
+            data-placeholder-ru="Фамилия"
+            placeholder="Nume" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <div class="input-group">
+          <input id="reg-prenume" type="text"
+            data-placeholder-ro="Prenume"
+            data-placeholder-ru="Имя"
+            placeholder="Prenume" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <div class="input-group">
+          <input id="reg-email" type="email"
+            data-placeholder-ro="Email"
+            data-placeholder-ru="Email"
+            placeholder="Email" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <div class="input-group">
+          <input id="reg-telefon" type="tel"
+            data-placeholder-ro="Telefon (doar cifre)"
+            data-placeholder-ru="Телефон (только цифры)"
+            placeholder="Telefon (doar cifre)" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <div class="input-group">
+          <input id="reg-parola" type="password"
+            data-placeholder-ro="Parolă (min. 8 caractere)"
+            data-placeholder-ru="Пароль (мин. 8 символов)"
+            placeholder="Parolă (min. 8 caractere)" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <div class="input-group">
+          <input id="reg-confirma" type="password"
+            data-placeholder-ro="Confirmă parola"
+            data-placeholder-ru="Подтвердите пароль"
+            placeholder="Confirmă parola" required>
+          <span class="input-feedback"></span>
+        </div>
+
+        <button type="submit" data-key="register-send">Creează cont</button>
+
+      </form>
+
+      <p class="auth-link">
+        <span data-key="have-account">Ai deja un cont?</span>
+        <a href="login.html" data-key="go-login">Autentifică-te</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
